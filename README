@@ -1,1 +1,32 @@
 put the codes in Book apue here, just for learning
+
+Q: How to compile the codes?
+A: 
+    e.g. I copy all the codes here: 
+        D:\Dropbox\VMware_share\workspace\Linux___apue.2e
+    And then go into directory "threads":
+        cp linux.mk Makefile
+    Then go to the parent directory, open file "Make.defines.linux" and modify it like below:
+        WKDIR=/home/tomxue/workspace/Linux___apue.2e
+    Finally, just goes into directory "threads" and
+        make
+    
+        tomxue@ubuntu:~/workspace/Linux___apue.2e/threads$ make
+        gcc -DLINUX -ansi -I/home/tomxue/workspace/Linux___apue.2e/include -Wall -D_GNU_SOURCE   -c -o condvar.o condvar.c
+        gcc -DLINUX -ansi -I/home/tomxue/workspace/Linux___apue.2e/include -Wall -D_GNU_SOURCE   -c -o mutex1.o mutex1.c
+        gcc -DLINUX -ansi -I/home/tomxue/workspace/Linux___apue.2e/include -Wall -D_GNU_SOURCE   -c -o mutex2.o mutex2.c
+        mutex2.c: In function ‘foo_find’:
+        mutex2.c:57:8: warning: ‘fp’ is used uninitialized in this function [-Wuninitialized]
+        gcc -DLINUX -ansi -I/home/tomxue/workspace/Linux___apue.2e/include -Wall -D_GNU_SOURCE   -c -o mutex3.o mutex3.c
+        mutex3.c: In function ‘foo_find’:
+        mutex3.c:55:8: warning: ‘fp’ is used uninitialized in this function [-Wuninitialized]
+        gcc -DLINUX -ansi -I/home/tomxue/workspace/Linux___apue.2e/include -Wall -D_GNU_SOURCE   -c -o rwlock.o rwlock.c
+        gcc -DLINUX -ansi -I/home/tomxue/workspace/Linux___apue.2e/include -Wall -D_GNU_SOURCE   -L../lib  threadid.c  ../lib/libapue.a -pthread -o threadid
+        gcc -DLINUX -ansi -I/home/tomxue/workspace/Linux___apue.2e/include -Wall -D_GNU_SOURCE   -L../lib  exitstatus.c  ../lib/libapue.a -pthread -o exitstatus
+        gcc -DLINUX -ansi -I/home/tomxue/workspace/Linux___apue.2e/include -Wall -D_GNU_SOURCE   -L../lib  cleanup.c  ../lib/libapue.a -pthread -o cleanup
+        gcc -DLINUX -ansi -I/home/tomxue/workspace/Linux___apue.2e/include -Wall -D_GNU_SOURCE   -L../lib  badexit2.c  ../lib/libapue.a -pthread -o badexit2
+        badexit2.c: In function ‘printfoo’:
+        badexit2.c:11:2: warning: format not a string literal and no format arguments [-Wformat-security]
+        badexit2.c: In function ‘thr_fn2’:
+        badexit2.c:31:2: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘pthread_t’ [-Wformat]
+
