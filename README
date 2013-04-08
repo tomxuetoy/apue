@@ -4,7 +4,7 @@ Q: How to compile the codes?
 A: 
     e.g. I copy all the codes here: 
         D:\Dropbox\VMware_share\workspace\Linux___apue.2e
-    And then go into directory "threads":
+    And then for example go into directory "threads":
         cp linux.mk Makefile
     Then go to the parent directory, open file "Make.defines.linux" and modify it like below:
         WKDIR=/home/tomxue/workspace/Linux___apue.2e
